@@ -17,4 +17,5 @@ with open(path, newline='') as csvfile:
         + ' --non-interactive --sync=now'
         
         output = subprocess.check_output(command, shell=True)
+        print(output)
         time.sleep(5)
