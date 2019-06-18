@@ -4,6 +4,7 @@ import time
 
 path = "Update the Path to CSV file exported from TPM password manager"
 folder_name = "Update the lastpass folder under which passwords need to be udpated"
+
 with open(path, newline='') as csvfile:
     reader = csv.DictReader(csvfile, escapechar='\\')
     for row in reader:
