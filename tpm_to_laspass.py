@@ -3,6 +3,7 @@ import subprocess
 import time
 
 path = "Update the Path to CSV file exported from TPM password manager"
+folder_name = "Update the lastpass folder under which passwords need to be udpated"
 with open(path, newline='') as csvfile:
     reader = csv.DictReader(csvfile, escapechar='\\')
     for row in reader:
@@ -10,7 +11,7 @@ with open(path, newline='') as csvfile:
         + '\nPassword: ' + row['Password'].replace('"', '\\"').replace("%", "%%") \
         + '\nURL: ' + row['Access information'].replace('"', '\\"').replace("%", "%%") \
         + '\nNotes: ' + row['Notes'].replace('"', '\\"').replace("%", "%%") \
-        + '" | lpass add Shared-migrated-from-TPM/' \
+        + '" | lpass add ' + folder_name + '/' \
         + row['Name'].replace(" ", "-").replace("(", "-").replace(")", "-").replace('"', '') \
         + ' --non-interactive --sync=now'
         
